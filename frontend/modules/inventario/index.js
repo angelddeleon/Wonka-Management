@@ -107,7 +107,7 @@ async function fillSearchDescargo () {
 -------------------- */
 
 // eslint-disable-next-line no-unused-vars
-function addItem (params) {
+async function addItem (params) {
   const codValue = document.getElementById('codigo')
   const desValue = document.getElementById('descripcion')
   const categorValue = document.getElementById('categoria')
@@ -116,6 +116,14 @@ function addItem (params) {
   const costoValue = document.getElementById('costo')
   const stock = document.getElementById('stock')
   save.style.backgroundColor = 'initial'
+  const lstCategory = await getCategory()
+  const options = lstCategory.map((product, index) => `
+        <option value="${product.id}">${product.description}</option>
+    `)
+  console.log(lstCategory)
+
+  const selectElement = document.getElementById('categoria')
+  selectElement.innerHTML = options.join('')
 
   codValue.value = ''
   desValue.value = ''
@@ -217,7 +225,9 @@ async function fillModal (id) {
   const lstProducts = await getProducts()
   const selected = id ? lstProducts.find(item => item.id === parseInt(id)) : lstProducts[0]
   const lstCategory = await getCategory()
-  const selectedCategoty = id ? lstCategory.find(item => item.id === parseInt(selected.id)) : lstCategory[0]
+  const selectedCategoty = selected.id ? lstCategory.find(item => item.id === parseInt(selected.categoryId)) : lstCategory[0]
+
+  console.log(parseInt(selected.id))
 
   const viewID = selected?.id || ''
   const viewDescription = selected?.description || ''
