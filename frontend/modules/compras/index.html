@@ -52,16 +52,13 @@
           </div>
 
           <div class="contenido">
-
+            
             <div class="solicitudes">
               <h2>Requisicion</h2>
               <p>Tienes $ solicitudes:</p>
-  
-              <div class="solicitud">
-                <h2>Titulo</h2>
-                <p>categoria</p>
-                <p>cantidad</p>
-                <a onclick="cargarProductos()" class="btn-open">Efectuar</a>
+              
+              <div id="tarjetasSolicitudes">
+
               </div>
             </div>
   
@@ -97,29 +94,29 @@
 
                 <div class="zona-calculos">
 
-                  <div class="codigoArticulo">
-                  </div>
-
-                  <div class="descripcionArticulo">
-                  </div>
-
                   <div class="precioPorUnidad">
+                    <h4>Precio por unidad</h4>
+                    <p>100$</p>
                   </div>
 
                   <div class="cantidadContenedor">
+                    <h4>Cantidad</h4>
+                    <p>10</p>
                   </div>
 
                   <div class="montoDeprecioPorUnidad">
                     <h4>Monto</h4>
-                    <p>1200$</p>
+                    <p>1000$</p>
                   </div>
 
                   <div class="IvaContenedor">
-
+                    <h4>Iva</h4>
+                    <p>160</p>
                   </div>
 
                   <div class="totalContenedor">
-
+                    <h4>Total</h4>
+                    <p>1160$</p>
                   </div>
 
 
@@ -127,16 +124,7 @@
 
               </div>
 
-              <div class="seccion-ordenDeCompra">
-                <h2>Orden de Compra</h2>
-
-                <div class="ordenDeCompra">
-                  <p>Hola</p>
-                </div>
-
                 <button class="btn-ordenDeCompra">Enviar orden de compra</button>
-
-              </div>
 
             </div>
 
@@ -150,5 +138,6 @@
       </main>
     </div>
   </body>
+  <script src="producto.js"></script>
   <script src="compras.js"></script>
 </html>
